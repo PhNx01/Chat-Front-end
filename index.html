@@ -9,13 +9,22 @@
 </head>
 
 <body>
-    <div class="chat">
-        <header>
-            <h1>Chat</h1>
-        </header>
 
-        <h1>ola</h1>
+    <div class="sidebar">
+        <h2>contatos</h2>
+        <div class="contatos">Contato 1</div>
+        <div class="contatos">Contato 2</div> 
     </div>
+
+    <div class="chat-container">
+        <div class="chat-header">Contato 1</div>
+        <div class="chat-box" id="chat-box"></div>
+        <div class="chat-input">
+            <input type="text" id="menssagem" placeholder="Digite uma menssagem...">
+            <button onclick="sendMenssage()">Enviar</button>
+        </div>
+    </div>
+
 </body>
 
 </html>
