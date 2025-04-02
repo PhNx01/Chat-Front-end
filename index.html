@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Whatsapp 2</title>
+    <link rel="stylesheet" href="script.js">
+    <title>ZapZap 001 - alpha version</title>
 </head>
 
 <body>
@@ -15,6 +16,11 @@
         <br>
         <div class="contatos">João Falcao</div>
         <div class="contatos">Ronaldo Falcao</div> 
+        <div class="contatos">Ronaldo Falcao</div> 
+        <div class="contatos">Angela Falcao</div> 
+        <div class="contatos">Eloisa Falcao</div> 
+        <div class="contatos">Vitoria Falcao</div> 
+
     </div>
 
     <div class="chat-container">
@@ -22,9 +28,25 @@
         <div class="chat-box" id="chat-box"></div>
         <div class="chat-input">
             <input type="text" id="menssagem" placeholder="Digite uma menssagem...">
-            <button onclick="sendMenssage()">Enviar</button>
+            <button onclick="sendMenssagem()">Enviar</button>
         </div>
     </div>
+
+    <script>
+        function sendMenssagem() {
+            let input = document.getElementById("menssagem");
+            let text = input.value.trim();
+            if (text !== "") {
+                let chatBox = document.getElementById("chat-box");
+                let messageElement = document.createElement("div");
+                messageElement.classList.add("menssagem", "sent");
+                messageElement.textContent = text;
+                chatBox.appendChild(messageElement);
+                input.value = "";
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        }
+    </script>
 
 </body>
 
