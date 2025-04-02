@@ -12,19 +12,36 @@
 <body>
 
     <div class="sidebar">
-        <h2>contatos</h2>
-        <br>
-        <div class="contatos">João Falcao</div>
-        <div class="contatos">Gian Romanha</div> 
-        <div class="contatos">Alemao</div> 
-        <div class="contatos">Miguel</div> 
-        <div class="contatos">Cleitom rasta</div> 
-
+        <h2>Contatos</h2>
+        <div class="contato">
+            <div class="contato-info">
+                <strong>João Falcao</strong>
+                <span class="contato-status status-online">Online</span>
+            </div>
+            <span>Oi! Como está seu dia?</span>
+        </div>
+        <div class="contato">
+            <div class="contato-info">
+                <strong>Gian Romanha</strong>
+                <span class="contato-status status-offline">Offline</span>
+            </div>
+            <span>Olá, como vai?</span>   
+        </div>
+        <div class="contato">
+            <div class="contato-info">
+                <strong>Alemao</strong>
+                <span class="contato-status status-offline">Offline</span>
+            </div>
+            <span>Qual é a boa?</span>   
+        </div>
+        <button class="new-chat-button" onclick="startNewChat()">+ Nova Conversa</button>
     </div>
 
     <div class="chat-container">
         <div class="chat-header">João Falcao</div>
-        <div class="chat-box" id="chat-box"></div>
+        <div class="chat-box" id="chat-box">
+            <div class="message received">Oi! Como está seu dia?</div>
+        </div>
         <div class="chat-input">
             <input type="text" id="menssagem" placeholder="Digite uma menssagem...">
             <button onclick="sendMenssagem()">Enviar</button>
@@ -44,6 +61,12 @@
                 input.value = "";
                 chatBox.scrollTop = chatBox.scrollHeight;
             }
+        }
+
+
+        function startNewChat() {
+            let chatBox = document.getElementById("chat-box");
+            chatBox.innerHTML = ""; // Limpa o chat
         }
     </script>
 
